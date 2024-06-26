@@ -22,3 +22,20 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+Installation:
+
+git clone git@github.com:ShaggyDishu/mini_blog.git
+
+cd mini_blog
+
+bundle install
+
+rails db:create
+
+rails db:migrate
+
+rails db:seed
+
+rails server
