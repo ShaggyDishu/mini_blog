@@ -1,0 +1,14 @@
+<div class="container">
+  <h1 class="my-4"><%= @blog_post.title %></h1>
+
+  <div class="card">
+      <%= image_tag @search_results.first.urls.full, class: "card-img-top" %>
+    <div class="card-body">
+      <p class="card-text"><%= @blog_post.content %></p>
+    </div>
+    <div class="card-footer">
+      <%= link_to 'Edit', edit_blog_post_path(@blog_post), class: 'btn btn-primary' %> |
+      <%= link_to 'Back', blog_posts_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>
+</div>

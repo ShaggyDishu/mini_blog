@@ -1,0 +1,25 @@
+<div class="container">
+  <h1 class="my-4">All Blog Posts</h1>
+
+  <%= link_to 'New Blog Post', new_blog_post_path, class: 'btn btn-primary mb-4' %>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @blog_posts.each do |blog_post| %>
+        <tr>
+          <td><%= link_to blog_post.title, blog_post_path(blog_post) %></td>
+          <td>
+            <%= link_to 'Edit', edit_blog_post_path(blog_post), class: 'btn btn-sm btn-warning' %> |
+            <%= link_to 'Delete', blog_post_path(blog_post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
