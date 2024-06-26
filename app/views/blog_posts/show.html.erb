@@ -2,7 +2,12 @@
   <h1 class="my-4"><%= @blog_post.title %></h1>
 
   <div class="card">
-      <%= image_tag @search_results.first.urls.full, class: "card-img-top" %>
+      <% if @search_results.present? %>
+        <%= image_tag @search_results.first.urls.full, class: "card-img-top" %>
+      <% else %>
+        <% @search_results = Unsplash::Photo.search('cat') %>
+        <%= image_tag @search_results.first.urls.full, class: "card-img-top" %>
+      <% end %>
     <div class="card-body">
       <p class="card-text"><%= @blog_post.content %></p>
     </div>
